@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 username_css = '@name=\'username\''
-passowrd_css = 'name="password"'
+password_css = 'name="password"'
 username = ''
 password = ''
 count = 0
@@ -25,7 +25,7 @@ def click_button_with_css(driver, css_selector):
     element.click()
 
 
-def naviagate_to_followers(driver):
+def navigate_to_followers(driver):
     dropdown_css = '[alt*="' + username + '"]'
     profile_css = "[href*=\"" + username + "\"]"
     click_button_with_css(driver, dropdown_css)
@@ -38,7 +38,7 @@ def __main__():
     time.sleep(1)
 
     login(driver)
-    naviagate_to_followers(driver)
+    navigate_to_followers(driver)
 
     try:
         click_button_with_css(driver, "[href*=\"" + username + "/followers/\"]")
